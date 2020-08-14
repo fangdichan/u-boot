@@ -14,4 +14,13 @@
  */
 #include <configs/sunxi-common.h>
 
+
+#ifdef  CONFIG_BOOTCOMMAND
+#undef  CONFIG_BOOTCOMMAND
+#endif
+#define CONFIG_BOOTCOMMAND   "sf probe 0 50000000;" \
+                             "sf read 0x80C00000 0x090000 0x004000;"  \
+                             "sf read 0x80008000 0x0A0000 0x400000;" \
+                             "bootz 0x80008000 - 0x80C00000"
+
 #endif /* __CONFIG_H */
