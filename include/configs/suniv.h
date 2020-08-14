@@ -15,6 +15,14 @@
 #include <configs/sunxi-common.h>
 
 
+/* console port */
+#undef  CONFIG_CONS_INDEX
+/* #define CONFIG_CONS_INDEX       1  //UART0 PE0 PE1*/
+#define CONFIG_CONS_INDEX       2  //UART1 PA2 PA3
+/* #define CONFIG_CONS_INDEX       3  //UART2*/
+
+
+/* 16M spi flash */
 #ifdef  CONFIG_BOOTCOMMAND
 #undef  CONFIG_BOOTCOMMAND
 #endif
